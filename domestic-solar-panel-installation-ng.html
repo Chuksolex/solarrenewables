@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sollaren</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+  <script defer="true" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/domestic.css">
+
+
+  <script defer>
+    // Function to add the 'visible' class on scroll
+    function revealOnScroll() {
+      const elements = document.querySelectorAll(".slide-up");
+      const windowHeight = window.innerHeight;
+
+      elements.forEach((el) => {
+        const position = el.getBoundingClientRect().top;
+        if (position < windowHeight - 5) {
+          el.classList.add("visible");
+        }
+      });
+    }
+
+    // Trigger animation on scroll
+    window.addEventListener("scroll", revealOnScroll);
+  </script>
+</head>
+
+<body>
+   
+ <section id="nabararea">
+    <!--Navbar-->
+   <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid">
+    <!-- Navbar content -->
+    <a class="navbar-brand" href="/"><img src="./goal images/logomain2.png" width="70" alt="logo">
+      </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/domestic-solar-installation-ng">Residential</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/commercial-solar-installation-ng">Commercial</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/blogs">Blogs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/conntact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/support">Support</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Products
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/inverter-batteries">Inverter Batteries</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/solar-panels">Solar Panels</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/solar-inverters">Solar Inverters</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/all-in-one-solar-system">All In One Solar System</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/solar-street-light">Solar-Street-Light</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/solar-accessories">Solar Accessories</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/other-products">Other Products</a></li>
+            <li><hr class="dropdown-divider"></li>
+
+          </ul>
+        </li>
+       
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+   </nav>
+
+ </section>
+  <!-- Title -->
+  <section id="title" class="hero-section" >
+
+    <div class="container col-xxl-8 px-4 pt-5" >
+      <div class="row flex-lg-row-reverse align-items-center g-5 pt-5">
+        <div class="col-12 col-sm-12 col-lg-6">
+          <img src="./goal images/warranty.png" class="d-block mx-lg-auto  img-fluid homeImage" alt="Bootstrap Themes" height=""
+            loading="lazy">
+        </div>
+        <div class="col-lg-6">
+          <h3>HOME SOLAR PANELS NIGERIA   </h3>
+          <h2 class="display-5 fw-bold text-light lh-1 mb-3">Empower Your Home, Save More</h2>
+          <hr class="w-50 text-light ">
+          <p class="fst-italic mb-3 fw-bold fs-5">Transform your home into a sustainable energy hub by leveraging Nigeria's abundant sunlight. Reduce your electricity costs and embrace a greener future with renewable energy solutions designed for your needs.</p>
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <button type="button" class="btn btn-light btn-lg px-4 me-md-2 mb-4">            
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                  </svg> Get Quote</button>
+            <button type="button" class="btn px-4 mb-4 btnn-whatsapp fs-4">
+                
+                <i class="bi bi-whatsapp m-1 fs-4"></i>
+                   Whatsapp Us
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <!-- Our Story Area -->
+    <div class="jumbotron jumbotron-fluid py-5">
+      <div class="container text-center">
+        <h1 class="display-4 fw-bold">Nigeria's Leading Residential Solar Installer
+        </h1>
+        <p class="lead text-body-emphasis">With over 15 years of combined experience in the solar energy industry, we are dedicated to empowering Nigerians with reliable, eco-friendly energy solutions. Our commitment to sustainability and innovation ensures that customers can make smart, environmentally conscious decisions for their energy needs. As a trusted solar energy provider in Nigeria, we are passionate about driving the transition to a greener, more sustainable energy future.</p>
+      
+        <div class="p-5">
+          <h3 class="textColor animateText">Reduce heavy spending power bills</h3>
+          <a class="btn btn-dark btn-lg" href="/contact">Enquire Now</a>
+        </div>
+       
+        <!-- YouTube Video Embed -->
+        <h3 class="display-4 fw-bold">UNBELIEVABLE ENERGY AND COST SAVINGS JOURNEY  </h3>
+        <div class="video-container">
+          
+        <iframe width="1000" height="600" 
+        src="https://www.youtube.com/embed/pBl954B07iI?si=uoMSxzYytAk_ABNM" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen      
+        
+        >
+
+        </iframe>
+
+
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="backgroundo">
+    <!-- Detail Area -->
+     <div class="container">
+      <h4 class="col-lg-6 fw-bold text-dark py-4 fs-2">Solar Renewables Ltd.' RESIDENTIAL SOLAR PANEL INSTALLATION</h4>
+
+      <div class="row flex-column-reverse flex-md-row">
+        <div class="col-lg-6 col-sm-12 col-md-6 fw-bold fs-5">
+            <p class=" flow">Residential solar panel installation is becoming a game-changer in Nigeria as more homeowners discover the immense benefits of clean, sustainable energy.</p>
+            <p class="">Specifically designed for residential use, these solar panel systems provide a dependable and eco-friendly energy source, perfectly suited for Nigeria’s abundant sunshine. With the nation's increasing shift toward renewable energy, it’s clear why many are opting for solar solutions to power their homes.</p>
+            <p class="">Solar Renewables Ltd., a trusted provider of residential solar panel systems in Nigeria, is at the forefront of this energy revolution. Our mission is to make the transition to solar power seamless for every homeowner, enabling them to tap into the limitless potential of the sun. By choosing Solar4Naija, Nigerians can reduce reliance on traditional energy sources, lower energy costs, and contribute to a cleaner, greener environment.</p>
+            <p class="">Join the solar revolution with Solar4Naija and take the first step toward energy independence and long-term savings for your home!</p>
+           
+
+
+          </h4>
+
+        </div>
+        <div class="col-lg-6 col-sm-12 col-md-6">
+            <img src="./goal images/installation.jpeg" alt="" width="100%" height="100%">
+
+        </div>
+
+      </div>
+      
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 customRow">
+        <div class="customCol   bg-light text-dark">
+          <h4>Live Healthier with Solar Energy</h4>
+          <p>Switching to solar energy not only powers your home but also contributes to cleaner air and a healthier environment. By reducing reliance on fossil fuels, solar panels help combat air pollution, ensuring better health and well-being for you and future generations. Make the choice for a brighter, healthier future today!</p>
+        </div>
+        <div class="customCol  bg-light text-dark">
+          <h4>Energy Savings Made Easy
+          </h4>
+          <p>Harness the power of the sun to take control of your energy costs. Solar panels enable you to generate your electricity, reducing reliance on traditional energy sources. This means long-term savings on your energy bills, freeing up funds for other important needs. Investing in solar today sets you on the path to significant financial benefits tomorrow.</p>
+        </div>
+        <div class="customCol  bg-light text-dark">
+          <h4>Slash Your Energy Bills
+          </h4>
+          <p>Installing solar panels is a smart way to reduce your electricity costs in Nigeria. Solar panels generate power during peak daylight hours, matching the times when energy demand is highest. This allows you to offset a large portion of your electricity expenses. In some cases, excess energy generated can be stored or even sold, turning your solar investment into a source of extra savings and income.</p>
+        </div>
+        <div class="customCol  bg-light text-dark">
+          <h4>Boost Your Property Value
+          </h4>
+          <p>Homes equipped with solar panels are increasingly sought after in Nigeria due to their eco-friendly and cost-saving benefits. Solar installations not only reduce energy costs but also make properties more appealing to buyers. This added value can translate into a higher selling price, as prospective homeowners recognize the long-term financial and environmental advantages of a solar-powered home.</p>
+        </div>
+        <div class="customCol  bg-light text-dark">
+          <h4>Reduce Your Carbon Footprint
+          </h4>
+          <p>As the world moves towards a more sustainable future, solar panels play a key role in reducing carbon emissions. Solar power is a clean and renewable energy source that doesn’t emit harmful greenhouse gases. By choosing solar energy, you’re making a significant contribution to lowering carbon footprints and combating climate change, helping create a greener and healthier planet for generations to come.</p>
+        </div>
+        <div class="customCol bg-light text-dark">
+          <h4>Boost Your Home's Energy Efficiency
+          </h4>
+          <p>Installing solar panels can significantly enhance your home's energy performance. By generating your electricity, you increase your property's energy efficiency and align with energy standards. This improvement not only makes your home more appealing to buyers or renters but also adds value while supporting a sustainable lifestyle.</p>
+        </div>
+        <div class="customCol  bg-light text-dark">
+            <h4>Get Energy Independence       </h4>
+            <p>Solar panels empower you to reduce your dependence on external electricity providers while staying connected to the grid. This added autonomy is particularly valuable in areas with frequent power outages, allowing you to keep essential systems running during emergencies or grid failures. For complete off-grid capability, additional components like battery storage and island mode functionality would be required.</p>
+        </div>
+        <div class="customCol  bg-light text-dark">
+
+          <h4>Stable Energy Supply  </h4>
+          <p>Solar panels provide a steady and reliable source of electricity by harnessing energy from the sun. This helps you mitigate the impact of unpredictable energy price fluctuations and ensures you have a consistent power supply, even during peak demand periods.</p>
+        </div>
+        <div class="customCol  bg-light text-dark">
+          <h4>Resilience During Outages          </h4>
+          <p>With solar power systems equipped with battery storage, you can maintain electricity in your home during grid outages. This resilience is especially useful in areas prone to frequent disruptions, ensuring uninterrupted power for critical devices and appliances.</p>
+        </div>
+      </div>
+
+
+
+
+      <div class="" style="margin: auto; width: 75%;">
+        <div class=" jumbotron-fluid py-5">
+          <div class="container text-center">
+            <h1 class="display-8 fw-bold">Top Benefits of Installing <pan class="text-dark">SOLAR PANELS</pan>  at Home  </h1>
+            <p class="lead text-body-secondary fw-bold">Installing solar panels offers immediate financial advantages while helping to reduce your environmental footprint and contribute to a more sustainable, energy-independent future. Solar panels are not only an investment in your financial health but also in the health of our planet.</p>
+          
+            <div class="p-5">
+              <h3 class="text-light animateText">Reduce heavy spending power bills</h3>
+              <a class="btn btn-dark btn-lg" href="/contact">Enquire Now</a>
+            </div>
+           
+              
+    
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+      
+     </div>
+
+  </section>
+
+   <!-- Brand of solar we use -->
+   <hr class="styledHr">
+   <section id="features " class="bg-body-tertiary">
+    <h2 class="pb-2 border-bottom my-5 text-center fw-bold fs-1">We partner & install top solar brands</h2>
+
+    <div class="container px-4 py-5 animation  backgroundo1 rounded" id="" >
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+          <div class="feature-icon bg-gradient">
+            <img src="./goal images/canadian-solar.png" width="300"  alt="">
+          </div>
+         
+        </div>
+        <div class="feature col">
+          <div class="feature-icon bg-gradient">
+            <img src="./goal images/fox_Ess.png" width="300"  alt="">
+          </div>
+         
+        </div>
+        <div class="feature col">
+          <div class="feature-icon bg-gradient">
+            <img src="./goal images/jinko-solar-logo.png" width="300"  alt="">
+          </div>
+          
+        </div>
+        <div class="feature col">
+          <div class="feature-icon bg-gradient">
+            <img src="./goal images/givenergy.png" width="300"  alt="">
+          </div>
+          
+        </div>
+        <div class="feature col">
+          <div class="feature-icon bg-gradient">
+            <img src="./goal images/jasolar.png" width="300"  alt="">
+          </div>
+         
+        </div>
+        <div class="feature col">
+          <div class="feature-icon bg-gradient">
+            <img src="./goal images/myenergi.png" width="300"  alt="">
+          </div>
+          
+        </div>
+        <div class="feature col">
+          <div class="feature-icon bg-gradient">
+            <img src="./goal images/pylontech.png" width="300"  alt="">
+          </div>
+          
+        </div>
+        <div class="feature col">
+          <div class="feature-icon bg-gradient">
+            <img src="./goal images/qcells.png" width="300"  alt="">
+          </div>
+          
+        </div>
+        <div class="feature col">
+          <div class="feature-icon bg-gradient">
+            <img src="./goal images/solax.png" width="300"  alt="">
+          </div>
+          
+        </div>
+        <div class="feature col">
+          <div class="feature-icon bg-gradient">
+            <img src="./goal images/solis.png" width="300"  alt="">
+          </div>
+          
+        </div>
+        <div class="feature col">
+          <div class="feature-icon bg-gradient">
+            <img src="./goal images/trina_solar.png" width="300"  alt="">
+          </div>
+          
+        </div>
+      </div>
+
+    
+    </div>
+    <div class="p-5 text-center">
+      <h3 class="textColor animateText">Save heavy on your power bills</h3>
+      <a class="btn btn-dark btn-lg" href="/contact">Enquire Now</a>
+    </div>
+  
+</section>
+ 
+ <!-- Pricing -->
+ <section id="pricing">
+  <div class="container">
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h2 class="display-4 fw-normal">Solar Packages</h2>
+      <p class="fs-5 textColor">Residential Packages.
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header tilt-div-up py-3">
+            <h4 class="my-0 fw-normal">PACKAGE 1</h4>
+          </div>
+         
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">INCLUDES<small class="text-body-secondary fw-light"></small></h1>
+            <hr class="centered-hr">
+
+            <ul class="list-unstyled mt-3 mb-4 fs-6">
+              <li> <i class="bi bi-check icon-check iconStyle" ></i><i class="bi bi-check icon-check iconStyle" ></i> Solar Only</li>
+              <li> <i class="bi bi-check icon-check iconStyle" ></i><i class="bi bi-check icon-check iconStyle" ></i> 10 Panels</li>
+              <li> <i class="bi bi-check icon-check iconStyle" ></i><i class="bi bi-check icon-check iconStyle" ></i> Fully Installed</li>
+              <li class=""><img src="./goal images/packageimage.png" alt="solar and battery" width="300"></li>
+
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-dark">Get Started</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">PACKAGE 2</h4>
+          </div>
+          <div class="card-body text-center">
+            <h1 class="card-title pricing-card-title">INCLUDES</h1>
+            <hr class="centered-hr">
+            <ul class="list-unstyled mt-3 mb-4 fs-6">
+              <li> <i class="bi bi-check icon-check iconStyle" ></i><i class="bi bi-check icon-check iconStyle" ></i> Solar + Battery</li>
+              <li> <i class="bi bi-check icon-check iconStyle" ></i><i class="bi bi-check icon-check iconStyle" ></i> 10 Panels + 5.8kWh Battery Storage</li>
+              <li> <i class="bi bi-check icon-check iconStyle" ></i><i class="bi bi-check icon-check iconStyle" ></i> Fully Installed</li>
+              <li class=""><img src="./goal images/packageimage.png" alt="solar and battery" width="300"></li>
+
+            </ul>
+            <button type="button" class="w-100 btn btn-lg backgroundo">Get started</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-dark">
+          <div class="card-header py-3  backgroundo border-dark">
+            <h4 class="my-0 fw-normal">PACKAGE 3</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">INCLUDES<small class="text-body-secondary fw-light"></small></h1>
+            <hr class="centered-hr">
+
+            <ul class="list-unstyled mt-3 mb-4 fs-6">
+              <li> <i class="bi bi-check icon-check iconStyle" ></i><i class="bi bi-check icon-check iconStyle" ></i> Solar + Battery</li>
+              <li> <i class="bi bi-check icon-check iconStyle" ></i><i class="bi bi-check icon-check iconStyle" ></i> 16 Panels + 8.7kWh Battery Storage</li>
+              <li> <i class="bi bi-check icon-check iconStyle" ></i><i class="bi bi-check icon-check iconStyle" ></i> Fully Installed</li>
+              <li class=""><img src="./goal images/packageimage.png" alt="solar and battery" width="300"></li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg backgroundo">Contact us</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+   <!-- Features 2-->
+  <section id="features " class="bg-body-tertiary">
+    <div class="container px-4 py-5 slide-up " id="featured-3" >
+      <h3 class="pb-2  text-center fw-bold fs-1">Services we render</h3>
+      <h2 class="fw-bold text-center textColor"><span class="text-dark">FOR</span> RESIDENTIAL SOLAR INSTALLATION</h2>
+      <p class=" border-bottom text-center mx-auto fw-bold">We offer a comprehensive range of services to make your residential solar panel installation seamless and stress-free, ensuring your clean energy needs are met with efficiency and precision.</p>
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+          <div class="feature-icon bg-gradient">
+            <img src="./goal images/Canadian-solar-panel.jpg" width="300"  alt="">
+          </div>
+          <h2>Solar Panels</h2>
+          <p>We offer a comprehensive range of services to make your residential solar panel installation seamless and stress-free, ensuring your clean energy needs are met with efficiency and precision.</p>
+          <a href="#" class=" btn btn-secondary">
+            Learn More
+            <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+        <div class="feature col">
+          <div class="feature-icon bg-gradient">
+            <img src="./goal images/batterystorage.png" width="300"  alt="">
+          </div>
+          <h2>Storage Batteries
+          </h2>
+          <p>This reduces energy costs and supports the stability of Nigeria's power grid. Furthermore, battery storage maximizes the use of renewable energy sources, promoting a greener and more sustainable future for the country.</p>
+          <a href="#" class=" btn btn-secondary">
+            Learn More
+            <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+        <div class="feature col">
+          <div class="feature-icon bg-gradient">
+            <img src="./goal images/Inverters2.png" width="300"  alt="">
+          </div>
+          <h2>Inverters for Homes</h2>
+          <p>Inverters are an essential part of any solar panel system, converting the DC electricity produced by your panels into AC electricity for use in your home. We offer high-quality inverters customized to meet your specific residential requirements, ensuring the smooth and efficient operation of your solar energy system.</p>
+          <a href="#" class=" btn btn-secondary">
+            Learn More
+            <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+        <div class="feature col">
+          <div class="feature-icon bg-gradient">
+            <img src="./goal images/ups-battery-backup.png" width="300"  alt="">
+          </div>
+          <h2>Online Uninterruptible Power Supply:</h2>
+          <p>Discover our versatile range of off-grid, on-grid, and hybrid solar panels, designed for over 30 years of durability, exceptional efficiency, reliable performance, seamless integration, advanced energy management, and adaptability for diverse energy needs.</p>
+          <a href="#" class=" btn btn-secondary">
+            Learn More
+            <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+        <div class="feature col">
+          <div class="feature-icon bg-gradient">
+            <img src="./goal images/evcharger.png" width="250" height="300"  alt="">
+          </div>
+          <h2>EV Chargers:</h2>
+          <p>We provide EV charger solutions designed for homes, businesses, and public spaces. Our chargers combine smart technology with reliable performance, offering a seamless and efficient charging experience for all electric vehicles..</p>
+          <a href="#" class=" btn btn-secondary">
+            Learn More
+            <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+        <div class="feature col">
+          <div class="feature-icon bg-gradient">
+            <img src="./goal images/fans.png" width="300"  alt="">
+          </div>
+          <h2>Solar-powered Home Devices
+            :</h2>
+          <p>We deal in various Solar Panel Mount Accessories like solar fans, tvs, and so on</p>
+          <a href="#" class=" btn btn-secondary">
+            Learn More
+            <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+ 
+  <section class="container-fluid">
+    <!-- FAQs -->
+    <div class="accordion accordion-flush p-5" id="">
+      <h3 class="text-center fw-bold">Frequently Asked Questions (FAQs)</h3>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            What is a Residential Solar System?
+
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">A residential solar system, often called a home or rooftop solar system, is a setup of solar panels installed on a residential property to harness sunlight and generate electricity for household use.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            How Does a Residential Solar System Work?
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">A residential solar system uses solar panels with photovoltaic (PV) cells to convert sunlight into direct current (DC) electricity. This DC electricity is then transformed into alternating current (AC) electricity by an inverter, making it suitable for powering household appliances. Any excess electricity generated can be fed into the grid or stored in batteries for future use.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            What Are the Benefits of Installing a Residential Solar System?          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Lower Electricity Bills: Solar energy significantly reduces or eliminates power costs, offering lasting savings.
+            Eco-Friendly Energy: Solar power is renewable and reduces reliance on fossil fuels for a cleaner planet.
+            Financial Benefits: You may qualify for tax credits, rebates, or incentives depending on your location.
+            Increased Home Value: Solar installations can boost your property's resale appeal and value. 
+            
+            
+            
+            .</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseThree">
+            How Much Does a Residential Solar System Cost?
+
+          </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">The cost varies depending on system size, location, equipment quality, and installation. Request quotes from multiple providers to find the best fit for your needs.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+            How much do solar panels cost?
+
+          </button>
+        </h2>
+        <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">The cost of solar panels in Nigeria varies depending on the system size, quality, and installation requirements. On average:
+
+            Small systems for basic appliances cost around ₦200,000 to ₦500,000.
+            Medium systems for powering households cost between ₦1,000,000 to ₦3,000,000.
+            Larger systems for businesses or industrial use can cost ₦5,000,000 or more.
+            These prices include panels, inverters, batteries, and installation. While the initial cost is high, solar panels reduce electricity bills and provide long-term savings.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+            How long does it take to install a residential solar system?
+
+          </button>
+        </h2>
+        <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            The installation timeline varies based on system complexity and property size. Typically, it takes anywhere from a few days to a few weeks.        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingSeven">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+            What maintenance is needed for a residential solar system?
+
+          </button>
+        </h2>
+        <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Solar panels need minimal maintenance, with occasional cleaning and checks for shading issues. Inverter maintenance and system performance monitoring are also important. Many solar providers offer warranties and maintenance plans to keep the system running smoothly.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingEight">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+            Is my home suitable for a residential solar system?
+
+
+          </button>
+        </h2>
+        <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Many homes are well-suited for solar panel installation. Key factors like roof orientation, angle, shading, and structural integrity are evaluated by a solar professional during a site assessment to determine the viability of installing a solar system.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingNine">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseThree">
+            Can solar power be used during a power outage?
+
+
+          </button>
+        </h2>
+        <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">The ability to use solar power during an outage depends on your solar system type. Grid-tied systems without battery storage cannot operate during a power outage due to safety protocols. However, solar systems with battery backup, equipped with island mode functionality, or fully off-grid systems, can provide power even when the grid is down.</div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTen">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
+            How long does a residential solar system last?
+
+
+          </button>
+        </h2>
+        <div id="flush-collapseTen" class="accordion-collapse collapse" aria-labelledby="flush-headingTen" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Solar panels are built to be durable and can last 25 to 30 years or more with proper maintenance. Inverters typically have a lifespan of 10 to 15 years and may need to be replaced during the system’s lifetime.</div>
+      </div>
+    </div>
+  </section>
+
+<section>
+  <!-- Get Freequote -->
+  <hr class="styledHr">
+ <div class="container">
+   <div class=" row p-4 g-4">
+
+    <div class="col-md-6 col-12 col-lg-6 text-center">
+      <img src="./goal images/getfreequote.jpeg" alt="" class="text-center">
+      <p class="textColor  fw-bold fs-3">Get the cost for your solar need</p>
+      <p class="fs-4 fw-bold text-body-emphasis">Answer a few questions <i class="bi bi-arrow-right"></i></p>
+
+    </div>
+    <div class="col-md-6 col-12 col-lg-6">
+      <h3>Do you need Solar for your home or business?</h3>
+      <div class="enquiry-form-step-radio-input-container">
+        <div data-selected="false" class="enquiry-form-radio-input">
+          <input type="radio" name="solartype" value="home" class="enquiry-form-radio-input-toggle">
+          <label for="home" class="enquiry-form-radio-input-text">Home</label>
+        </div>
+        <div data-selected="false" class="enquiry-form-radio-input">
+          <input type="radio" name="solartype" value="business" class="enquiry-form-radio-input-toggle">
+          <label for="business" class="enquiry-form-radio-input-text">Business</label>
+        </div>
+      </div>
+
+
+    </div>
+
+   </div>
+  </div>
+
+  <div class="custom-row d-flex container">
+    <div class="custom-column first">
+      <div class="circle">
+        <span class="fs-5 fw-bold">Follow Up:</span>
+      </div>
+    </div>
+    <div class="custom-column d-flex ">
+      <span class="fs-1  fw-bold text-dark ">1 </span>  <span class="text-start ">A member our of team will call you to get your solar, requirement and budget.</span>
+    </div>
+    <div class="custom-column d-flex ">
+      <span class="fs-1  fw-bold text-dark ">2</span> <span class="text-start">Our technical team will provide you with custom solar quote based on requirement.</span>       
+    </div>
+    <div class="custom-column d-flex">
+      <span class="fs-1  fw-bold text-dark  ">3</span> <span class="text-start ">Your new solar system will be installed and you will start enjoying uninterrupted power</span>
+    </div> 
+  </div>
+
+</div>
+  
+</section>
+
+
+  <!-- Footer -->
+  <section id="contact" class="gradient-background mb-0 pb-0">
+    <div class="container ">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 mt-5 border-top text-light ">
+        <div class="col mb-3 middle">
+
+          <img src="./goal images/logomain2.png" alt="">
+          <h4>Head Office:</h4>
+          <h5>Solar Renewables Ltd.</h5>
+
+          <p>46 Layout, Abuja. Nigeria</p>
+
+        </div>
+
+        <div class="col mb-3 middle">
+
+        </div>
+
+        <div class="col mb-3 text-light middle">
+          <h5>SERVICE</h5>
+          <ul class="nav flex-column text-light">
+            <li class="nav-item mb-2 "><a href="#" class="nav-link p-0 text-light">Residential Solar PV</a></li>
+            <li class="nav-item mb-2 "><a href="#" class="nav-link p-0 text-light">Commercial Solar PV</a></li>
+            <li class="nav-item mb-2 "><a href="#" class="nav-link p-0 text-light">Batteries</a></li>
+            <li class="nav-item mb-2 "><a href="#" class="nav-link p-0 text-light">EV Chargers</a></li>
+            <li class="nav-item mb-2 "><a href="#" class="nav-link p-0 text-light">Solar Accessories</a></li>
+          </ul>
+        </div>
+
+        <div class="col mb-3 middle">
+          <h5>SITEMAP</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">About</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Blogs</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Support</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Contact Us</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Privacy Policy</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Privacy Policy</a></li>
+
+
+          </ul>
+          
+        </div>
+
+        <div class="col mb-3 middle">
+          <h5>GET IN TOUCH</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
+            <li class="nav-item mb-2"><a href="tel:+234 806 037 6481" class="nav-link p-0 text-light"><i class="bi bi-phone currentColor"></i>+234 806 037 6481</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="bi bi-whatsapp"></i> Whatsapp</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="bi bi-facebook"></i> Facebook</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="bi bi-google"></i> Email</a></li>
+          </ul>
+        </div>
+
+      </footer>
+      <p class="text-light mb-0 row mx-auto  pb-4 w-50">Solar Renewables Limited is Registered in Nigeria under the Corporate Affairs Commission CAC with RC</p>
+
+    </div>
+
+  </section>
+</body>
+
+</html>
