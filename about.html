@@ -44,7 +44,7 @@
    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
     <div class="container-fluid">
     <!-- Navbar content -->
-    <a class="navbar-brand" href="/"><img src="./goal images/logomain2.png" width="70" alt="logo">
+    <a class="navbar-brand" href="/"><img src="./goal images/logomain2.png" width="50" alt="logo" height="70">
       </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -439,18 +439,20 @@
       <p class="fs-4 fw-bold text-body-emphasis">Answer a few questions <i class="bi bi-arrow-right"></i></p>
 
     </div>
+
     <div class="col-md-6 col-12 col-lg-6">
       <h3>Do you need Solar for your home or business?</h3>
-      <div class="enquiry-form-step-radio-input-container">
-        <div data-selected="false" class="enquiry-form-radio-input">
-          <input type="radio" name="solartype" value="home" class="enquiry-form-radio-input-toggle">
-          <label for="home" class="enquiry-form-radio-input-text">Home</label>
-        </div>
-        <div data-selected="false" class="enquiry-form-radio-input">
-          <input type="radio" name="solartype" value="business" class="enquiry-form-radio-input-toggle">
-          <label for="business" class="enquiry-form-radio-input-text">Business</label>
-        </div>
-      </div>
+
+        <div class="enquiry-form-step-radio-input-container">
+          <div data-selected="false" class="enquiry-form-radio-input">
+            <input type="radio" name="solartype" value="home" class="enquiry-form-radio-input-toggle" onchange="redirectToContact(this.value)">
+            <label for="home" class="enquiry-form-radio-input-text">Home</label>
+          </div>
+          <div data-selected="false" class="enquiry-form-radio-input">
+            <input type="radio" name="solartype" value="business" class="enquiry-form-radio-input-toggle" onchange="redirectToContact(this.value)">
+            <label for="business" class="enquiry-form-radio-input-text">Business</label>
+          </div>
+    </form>
 
 
     </div>
@@ -486,7 +488,7 @@
       <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 mt-5 border-top text-light ">
         <div class="col mb-3 middle">
 
-          <img src="./goal images/logomain2.png" alt="">
+          <img src="./goal images/logomain2.png" alt=""  width="70">
           <h4>Head Office:</h4>
           <h5>Solar Renewables Ltd.</h5>
           <p>46 Layout, Abuja. Nigeria</p>
@@ -546,7 +548,14 @@
   </section>
 
     
-   
+   <script>
+    function redirectToContact(selectedValue) {
+      const url = `./contact.html?solarFor=${selectedValue}`;
+      window.location.href= url;
+
+      
+    }
+   </script>
 </body>
 
 </html>

@@ -1,4 +1,5 @@
-const { useState } = React;
+const { useState, useEffect } = React;
+
 
 const InteractiveForm = () => {
   const [step, setStep] = useState(1);
@@ -13,19 +14,39 @@ const InteractiveForm = () => {
     phone: '',
   });
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const choice = urlParams.get('solarFor'); // "JohnDoe"
+  
+
   const handleNext = (key, value) => {
-    setFormData({ ...formData, [key]: value });
+    setFormData((formData) => ({ ...formData, [key]: value  }));
     setStep(step + 1);
     console.log(formData);
 
   };
+  useEffect(() => {
+    if (choice) {
+      setFormData((prevData) => ({ ...prevData, solarFor: choice }));
+      setStep(2); // Go directly to step 2
+    }
+  }, [choice]);
 
   const handleBack = () => setStep(step - 1);
 
-  const handleSubmit = (e) => {
+  const handleSubmit =  (e) => {
     e.preventDefault();
     console.log(formData);
-    alert('Form submitted!');
+     fetch('https://formspree.io/f/mvgojryj', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(response => response.json())
+    .then(data => console.log('form success', data)) && alert("Your Message has been sent") && formData===""
+    .catch(Error => console.log('error', Error) && alert('Something went wrong try again'));
+    
+    
   };
 
   return (
@@ -36,12 +57,12 @@ const InteractiveForm = () => {
 <h3>Do you need Solar for your home or business?</h3>
 <div class="enquiry-form-step-radio-input-container">
   <div data-selected="false" class="enquiry-form-radio-input">
-    <input type="radio" name="solartype" value="home" class="enquiry-form-radio-input-toggle" onClick={() => handleNext('solarFor', 'home')} />
-    <label for="home" class="enquiry-form-radio-input-text" >Home</label>
+    <input type="radio" id='solarFor' name="solarFor" value="home" class="enquiry-form-radio-input-toggle" onClick={() => handleNext('solarFor', 'home')} />
+    <label for="solarFor" class="enquiry-form-radio-input-text" >Home</label>
   </div>
   <div data-selected="false" class="enquiry-form-radio-input">
-    <input type="radio" name="solartype" value="business" class="enquiry-form-radio-input-toggle" onClick={() => handleNext('solarFor', 'business')} />
-    <label for="business" class="enquiry-form-radio-input-text"  >Business</label>
+    <input type="radio" id='solarFor' name="solarFor" value="business" class="enquiry-form-radio-input-toggle" onClick={() => handleNext('solarFor', 'business')} />
+    <label for="solarFor" class="enquiry-form-radio-input-text"  >Business</label>
   </div>
 
 </div>
