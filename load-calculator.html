@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html
+  
+>
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Load Calculator - Solar Renewables Ltd. - Inverters - Batteries - Solar
+    </title>
+    <meta
+      content="Solar Renewables Ltd. is the leading solar energy company dealing on inverters and solar panel installations  of all types and frame."
+      name="description"
+    />
+    <meta
+      content="Load Calculator - Solar Renewables Ltd Nigeria - Inverters - Batteries - Solar"
+      property="og:title"
+    />
+    <meta
+      content="Solar Renewables Ltd. is the leading brand of inverters and solar panel engineering company."
+      property="og:description"
+    />    
+    
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./goal images/logomain.png">
+  
+ 
+   <link rel="stylesheet" href="./css/load-calculator.css">   
+      
+    <style>
+      input {
+        color: #808080;
+        font-family: poppins;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      input.qty[type="number"]::-webkit-inner-spin-button {
+        opacity: 1;
+      }
+
+      *:focus {
+        outline: none;
+      }
+
+      /* Grids */
+      .lc-container {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .lc-container > div {
+        text-align: center;
+        background: #fff;
+      }
+
+      /* Appliances */
+      .heading {
+        font-family: poppins, lato, verdana;
+        color: #dd3333;
+        text-align: center;
+        display: inline-block;
+        width: 250px;
+        margin: 0;
+        padding: 10px 10px;
+        font-size: 15px;
+        background-color: #fff;
+      }
+
+      input.heading2 {
+        font-family: poppins, lato, verdana;
+        color: #dd3333;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px 10px;
+        width: 80px;
+        border: none !important;
+      }
+
+      .appliance {
+        color: #404040;
+        text-align: center;
+        display: inline-block;
+        width: 250px;
+        margin: 0;
+        padding: 10px 10px;
+        font-size: 15px;
+        background-color: #fff;
+        border: 1px solid #e1e1e1;
+        border-radius: 20px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.01);
+      }
+
+      .appliance:hover {
+        color: #fff;
+        background-color: #505050;
+        border-color: #505050;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .appliance i {
+        float: left;
+        color: #fff;
+      }
+
+      .appliances input {
+        font-family: poppins, lato, verdana;
+        font-size: 13px;
+        text-align: center;
+        padding: 13px 10px;
+        padding-bottom: 11px;
+        margin-left: 5px;
+        width: 150px;
+        border: 1px solid #e1e1e1;
+        border-radius: 20px;
+      }
+
+      /* Results */
+      .results {
+        text-align: center;
+      }
+
+      .results h3 {
+        color: #404040;
+        font-size: 17px;
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+      }
+
+      .results h4 {
+        color: #404040;
+        font-weight: 500;
+        font-size: 15px;
+        padding: 0;
+        margin: 0;
+      }
+
+      .results h6 {
+        color: #404040;
+        font-weight: 500;
+        font-size: 15px;
+        padding: 0;
+        margin: 0;
+      }
+
+      .results input {
+        font-family: poppins, lato, verdana;
+        width: 200px;
+        color: #dd3333;
+        font-size: 28px;
+        font-weight: 400;
+        margin: 0;
+        border: none;
+        text-align: center;
+        cursor: default;
+      }
+
+      .results select {
+        font-family: poppins, lato, verdana;
+        width: 250px;
+        height: 50px;
+        padding: 5px 10px;
+        font-size: 18px;
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      .results i {
+        font-size: 12px;
+        color: #dd3333;
+        padding: 0;
+        margin: 0;
+      }
+
+      .results option {
+        text-align: center;
+      }
+
+      select {
+        text-align-last: center;
+      }
+      /* Other */
+      .selected {
+        color: #fff;
+        background-color: #1a76af;
+        border-color: #1a76af;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.01);
+      }
+
+      .selected:hover {
+        color: #fff;
+        background-color: #1a76af;
+        border-color: #1a76af;
+      }
+
+      input.active {
+        color: #1a76af;
+        border-color: #1a76af;
+      }
+
+      input[name="load"] {
+        cursor: default;
+      }
+
+      /* Media queries */
+      @media (max-width: 768px) {
+        .appliance {
+          width: 100%;
+          font-size: 12px;
+          padding: 6px 6px;
+        }
+        .appliances input {
+          padding: 12px 4px;
+          width: 100%;
+          font-size: 11px;
+          margin: 6px 0;
+        }
+        .heading {
+          font-size: 12px;
+          width: 150px;
+        }
+        input.heading2 {
+          font-size: 10px;
+          width: 70px;
+        }
+        .results select {
+          width: 200px;
+        }
+      } /* End custom CSS */
+      /* Start custom CSS */
+      *:focus {
+        outline: none;
+      }
+
+      select:focus {
+        outline: none;
+      }
+
+      .results input {
+        padding: 2rem;
+      } /* End custom CSS */
+    </style>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+<script defer="true" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="./css/commercial.css">
+    
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <section id="nabararea">
+        <!--Navbar-->
+       <nav class="navbar navbar-expand-lg bg-success border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+        <!-- Navbar content -->
+        <a class="navbar-brand" href="/"><img src="./goal images/logomain2.png" width="50" alt="logo" height="70"> </a>
+         <div >
+             <span class="text-white">Solar Renewables Ltd.</span><br>
+             <span class="text-white fw-bold fst-italic m-0">We are ready for the future</span>
+    
+         </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0 text-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/domestic-solar-panel-installation-ng.html">Residential</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/commercial-solar-panel-installation-ng.html">Commercial</a>
+            </li>
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/mini-grid.html">Mini-Grid</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/balcony-solar.html">Balcony Solar</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/battery-storage.html">Battery Storage</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/ev-charging.html">EV Charging</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/agricultural-solar.html">Agricultural Solar</a></li>
+                <li><hr class="dropdown-divider"></li>
+               
+    
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/load-calculator.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Load Calculator
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/load-calculator.html">Load Calculator</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/inverter-calculator.html">Inverter Load Calculator</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/solar-panel-calculator.html">Solar Panel Load Calculator</a></li>
+               
+    
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/support.html">Support</a>
+            </li>
+            
+            
+           
+          </ul>
+          <div class="d-flex justify-content-center align-items-center gap-5">
+            <p class="text-light fw-bold m-0">
+              <i class="bi-phone"></i> 08077363636363
+            </p>
+            <!-- Button -->
+            <a class="btn btn-outline-light fw-bold" href="/payment.html">Pay Now</a>
+          </div>
+          
+        </div>
+    
+      </div>
+    
+       </nav>
+    
+     </section>
+    
+      
+      <div class="banner-title-area-section">
+        <div class="banner-title-overlay"></div>
+        <div class="banner-area-title">
+          <div class="container-5 w-container">
+            <div class="sub-title-wrap center-align">
+              <h1 class="sub-title-text white-center">LOad calculator</h1>
+            </div>
+            <div class="title-area-content">
+              <h1 class="banner-title-text">
+                Know which inverter you need, what it can carry and for how long
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="section services service-page">
+        <div
+          data-w-id="169e23d5-d568-58e9-e320-451621fbf81a"
+          style="
+            -webkit-transform: translate3d(0, 0, 0) scale3d(0.97, 0.97, 1)
+              rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+            -moz-transform: translate3d(0, 0, 0) scale3d(0.97, 0.97, 1)
+              rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+            -ms-transform: translate3d(0, 0, 0) scale3d(0.97, 0.97, 1)
+              rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+            transform: translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0)
+              rotateY(0) rotateZ(0) skew(0, 0);
+            opacity: 0;
+          "
+          class="container-medium-714px text-center w-container"
+        >
+          <p class="paragraph services-section">
+            Select the type of load you wish to connect to the Inverter to
+            calculate the estimated rating of the Inverter you need. We
+            recommend that you take into account your necessity in peak
+            conditions. This will help you to derive a more accurate rating,
+            that you would require in such a condition.​
+          </p>
+        </div>
+      </section>
+      <div class="section-2">
+        <div class="dis-flex w-container">
+          <div class="div-block">
+            <div class="w-embed w-script">
+              <!DOCTYPE html>
+              <html>
+                <head>
+                  <meta charset="UTF-8" />
+                  <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                  />
+                  <link
+                    href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+                    rel="stylesheet"
+                  />
+                  <link rel="stylesheet" href="index.css" />
+                  <title>Load Calculator</title>
+                </head>
+                <body>
+                  <div class="lc-wrapper">
+                    <div class="lc-container">
+                      <div class="appliances">
+                        <!-- List of appliances -->
+                        <div class="heading">Appliance</div>
+                        <input
+                          class="heading2"
+                          type="text"
+                          value="Quantity"
+                          readonly
+                        />
+                        <input
+                          class="heading2"
+                          type="text"
+                          value="Load"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance bulb"
+                          onclick="selectBulb(); totalBulbLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>Normal Bulb
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="bulb-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalBulbLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="bulb-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance tlight"
+                          onclick="selectTlight(); totalTlightLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>Tube Light
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="tlight-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalTlightLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="tlight-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance ledlamp"
+                          onclick="selectLedlamp(); totalLedlampLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>LED Lamp
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="ledlamp-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalLedlampLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="ledlamp-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance fan"
+                          onclick="selectFan(); totalFanLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>Fan
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="fan-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalFanLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="fan-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance msystem"
+                          onclick="selectMsystem(); totalMsystemLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>Music System
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="msystem-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalMsystemLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="msystem-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance tvone"
+                          onclick="selectTvone(); totalTvoneLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>LCD/LED TV (< 42&quot;)
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="tvone-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalTvoneLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="tvone-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance tvtwo"
+                          onclick="selectTvtwo(); totalTvtwoLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>LCD/LED TV (> 42&quot;)
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="tvtwo-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalTvtwoLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="tvtwo-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance desktop"
+                          onclick="selectDesktop(); totalDesktopLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>Desktop Computer
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="desktop-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalDesktopLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="desktop-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance laptop"
+                          onclick="selectLaptop(); totalLaptopLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>Laptop
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="laptop-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalLaptopLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="laptop-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance fridgeone"
+                          onclick="selectFridgeone(); totalFridgeoneLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>Refrigerator (165-250Ltr)
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="fridgeone-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalFridgeoneLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="fridgeone-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance fridgetwo"
+                          onclick="selectFridgetwo(); totalFridgetwoLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>Refrigerator (250-350Ltr)
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="fridgetwo-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalFridgetwoLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="fridgetwo-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance fridgethree"
+                          onclick="selectFridgethree(); totalFridgethreeLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>Refrigerator (350-450Ltr)
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="fridgethree-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalFridgethreeLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="fridgethree-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance fridgefour"
+                          onclick="selectFridgefour(); totalFridgefourLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>Refrigerator (> 450Ltr)
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="fridgefour-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalFridgefourLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="fridgefour-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance acone"
+                          onclick="selectAcone(); totalAconeLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>AC - 1HP
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="acone-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalAconeLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="acone-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance actwo"
+                          onclick="selectActwo(); totalActwoLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>AC - 1.5HP
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="actwo-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalActwoLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="actwo-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance acthree"
+                          onclick="selectActhree(); totalActhreeLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>AC - 2HP
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="acthree-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalActhreeLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="acthree-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance toaster"
+                          onclick="selectToaster(); totalToasterLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>Toaster
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="toaster-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalToasterLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="toaster-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance washingmachine"
+                          onclick="selectWashingmachine(); totalWashingmachineLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>Washing Machine
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="washingmachine-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalWashingmachineLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="washingmachine-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance gamingconsole"
+                          onclick="selectGamingconsole(); totalGamingconsoleLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>Gaming Console
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="gamingconsole-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalGamingconsoleLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="gamingconsole-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+
+                        <div
+                          class="appliance microwaveoven"
+                          onclick="selectMicrowaveoven(); totalMicrowaveovenLoad(); calcTotalLoad();"
+                        >
+                          <i>&#10003;</i>Microwave Oven
+                        </div>
+                        <input
+                          type="number"
+                          min="0"
+                          class=""
+                          id="microwaveoven-qty"
+                          placeholder="How many?"
+                          disabled
+                          onchange="totalMicrowaveovenLoad(); calcTotalLoad();"
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          name="load"
+                          class=""
+                          id="microwaveoven-load"
+                          placeholder="Power(W)"
+                          readonly
+                        /><br /><br />
+                      </div>
+                    </div>
+                  </div>
+
+                  <script src="index.js"></script>
+                </body>
+              </html>
+            </div>
+          </div>
+          <div class="div-block-2">
+            <div class="w-embed">
+              <div class="results">
+                <div class="total-load">
+                  <h3>Your Total Load<br />&#9662;</h3>
+                  <input type="text" id="total-load" value="0" readonly />
+                  <h4>Watts</h4>
+                  <br />
+                  <hr />
+                </div>
+                <br />
+                <div class="rating">
+                  <h3>
+                    Recommended<br />
+                    Invertor Rating<br />&#9662;
+                  </h3>
+                  <input type="text" id="rating" value="0" readonly />
+                  <h4>VA</h4>
+                  <br />
+                  <hr />
+                </div>
+                <br />
+                <div class="backup-time">
+                  <h3>Estimate Your Battery<br />Back Up Time</h3>
+                  <br />
+                  <h6>Choose Battery Capacity</h6>
+                  <select
+                    id="battery-capacity"
+                    value=""
+                    onchange="calcBackupTime();"
+                  >
+                    <option value="">&nbsp;Select An Option</option>
+                    <option value="220">220 Ah</option>
+                    <option value="200">200 Ah</option>
+                    <option value="150">150 Ah</option></select
+                  ><br />
+                  <h4>(Ampere Hours)</h4>
+                  <br />
+                  <hr />
+                  <br />
+                  <h3>Your Available<br />Battery Back Up Time<br />&#9662;</h3>
+                  <input
+                    type="text"
+                    id="backup-time"
+                    value="0"
+                    readonly
+                  /><br />
+                  <h4>Hours</h4>
+                  <i class="note"></i><br />
+                  <p>
+                    <b>Disclaimer:</b> Backup time shown here is approximate.<br />
+                    The Battery should be in fully charged condition<br />
+                    to attain this backup time.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div class="w-embed w-script">
+            <p>
+              <script type="text/javascript">
+                // Selectors
+                let appliance = document.querySelector(".appliance");
+                let selected = document.querySelector(".selected");
+                let loadActive = document.getElementsByClassName("load-active");
+                // Bulb
+                let bulb = document.querySelector(".bulb");
+                let bulbLoad = document.getElementById("bulb-load");
+                let bulbQty = document.getElementById("bulb-qty");
+                // Tube Light
+                let tlight = document.querySelector(".tlight");
+                let tlightLoad = document.getElementById("tlight-load");
+                let tlightQty = document.getElementById("tlight-qty");
+                // LED Lamp
+                let ledlamp = document.querySelector(".ledlamp");
+                let ledlampLoad = document.getElementById("ledlamp-load");
+                let ledlampQty = document.getElementById("ledlamp-qty");
+                // Fan
+                let fan = document.querySelector(".fan");
+                let fanLoad = document.getElementById("fan-load");
+                let fanQty = document.getElementById("fan-qty");
+                // Music system
+                let msystem = document.querySelector(".msystem");
+                let msystemLoad = document.getElementById("msystem-load");
+                let msystemQty = document.getElementById("msystem-qty");
+                // TV one
+                let tvone = document.querySelector(".tvone");
+                let tvoneLoad = document.getElementById("tvone-load");
+                let tvoneQty = document.getElementById("tvone-qty");
+                // TV two
+                let tvtwo = document.querySelector(".tvtwo");
+                let tvtwoLoad = document.getElementById("tvtwo-load");
+                let tvtwoQty = document.getElementById("tvtwo-qty");
+                // Refrigerator one
+                let fridgeone = document.querySelector(".fridgeone");
+                let fridgeoneLoad = document.getElementById("fridgeone-load");
+                let fridgeoneQty = document.getElementById("fridgeone-qty");
+                // Refrigerator two
+                let fridgetwo = document.querySelector(".fridgetwo");
+                let fridgetwoLoad = document.getElementById("fridgetwo-load");
+                let fridgetwoQty = document.getElementById("fridgetwo-qty");
+                // Refrigerator three
+                let fridgethree = document.querySelector(".fridgethree");
+                let fridgethreeLoad =
+                  document.getElementById("fridgethree-load");
+                let fridgethreeQty = document.getElementById("fridgethree-qty");
+                // Refrigerator four
+                let fridgefour = document.querySelector(".fridgefour");
+                let fridgefourLoad = document.getElementById("fridgefour-load");
+                let fridgefourQty = document.getElementById("fridgefour-qty");
+                // AC one
+                let acone = document.querySelector(".acone");
+                let aconeLoad = document.getElementById("acone-load");
+                let aconeQty = document.getElementById("acone-qty");
+                // AC two
+                let actwo = document.querySelector(".actwo");
+                let actwoLoad = document.getElementById("actwo-load");
+                let actwoQty = document.getElementById("actwo-qty");
+                // AC three
+                let acthree = document.querySelector(".acthree");
+                let acthreeLoad = document.getElementById("acthree-load");
+                let acthreeQty = document.getElementById("acthree-qty");
+                // Desktop
+                let desktop = document.querySelector(".desktop");
+                let desktopLoad = document.getElementById("desktop-load");
+                let desktopQty = document.getElementById("desktop-qty");
+                // Laptop
+                let laptop = document.querySelector(".laptop");
+                let laptopLoad = document.getElementById("laptop-load");
+                let laptopQty = document.getElementById("laptop-qty");
+                // Toaster
+                let toaster = document.querySelector(".toaster");
+                let toasterLoad = document.getElementById("toaster-load");
+                let toasterQty = document.getElementById("toaster-qty");
+                // Washing Machine
+                let washingmachine = document.querySelector(".washingmachine");
+                let washingmachineLoad = document.getElementById(
+                  "washingmachine-load"
+                );
+                let washingmachineQty =
+                  document.getElementById("washingmachine-qty");
+                // Gaming Console
+                let gamingconsole = document.querySelector(".gamingconsole");
+                let gamingconsoleLoad =
+                  document.getElementById("gamingconsole-load");
+                let gamingconsoleQty =
+                  document.getElementById("gamingconsole-qty");
+                // Microwave Oven
+                let microwaveoven = document.querySelector(".microwaveoven");
+                let microwaveovenLoad =
+                  document.getElementById("microwaveoven-load");
+                let microwaveovenQty =
+                  document.getElementById("microwaveoven-qty");
+                // Other
+                let totalLoad = document.getElementById("total-load");
+                let batteryCapacity =
+                  document.getElementById("battery-capacity");
+                let backupTime = document.getElementById("backup-time");
+                let rating = document.getElementById("rating");
+                let load = document.getElementsByName("load");
+                let note = document.querySelector(".note");
+                let lcForm = document.getElementById("lc-form");
+                let lcFormTitle = document.getElementById("lc-form-title");
+                let lcFormButton = document.getElementById("lc-submit");
+                let results = document.querySelector("#lc-results");
+                let getInvertors = document.getElementById("get-invertors");
+              </script>
+            </p>
+          </div>
+          <div class="w-embed w-script">
+            <p>
+              <script>
+                // Form Submit
+                function showResults() {
+                  lcFormTitle.style.display = "none";
+                  lcForm.style.display = "none";
+                  results.style.display = "block";
+                }
+
+                function showResultsDelayed() {
+                  setTimeout(showResults, 3000);
+                }
+
+                lcForm.addEventListener("submit", showResultsDelayed);
+
+                // Select functions
+                // Bulb
+                function selectBulb() {
+                  bulb.classList.toggle("selected");
+
+                  if (bulb.classList.contains("selected")) {
+                    bulbQty.classList.add("active");
+                    bulbLoad.classList.add("active", "load-active");
+                    bulbQty.value = 1;
+                    bulbQty.disabled = false;
+                  } else {
+                    bulbQty.classList.remove("active");
+                    bulbLoad.classList.remove("active", "load-active");
+                    bulbQty.value = 0;
+                    bulbLoad.value = 0;
+                    bulbQty.disabled = true;
+                  }
+                }
+
+                // Tube Light
+                function selectTlight() {
+                  tlight.classList.toggle("selected");
+                  if (tlight.classList.contains("selected")) {
+                    tlightQty.classList.add("active");
+                    tlightLoad.classList.add("active", "load-active");
+                    tlightQty.value = 1;
+                    tlightQty.disabled = false;
+                  } else {
+                    tlightQty.classList.remove("active");
+                    tlightLoad.classList.remove("active", "load-active");
+                    tlightQty.value = 0;
+                    tlightLoad.value = 0;
+                    tlightQty.disabled = true;
+                  }
+                }
+
+                // LED Lamp
+                function selectLedlamp() {
+                  ledlamp.classList.toggle("selected");
+                  if (ledlamp.classList.contains("selected")) {
+                    ledlampQty.classList.add("active");
+                    ledlampLoad.classList.add("active", "load-active");
+                    ledlampQty.value = 1;
+                    ledlampQty.disabled = false;
+                  } else {
+                    ledlampQty.classList.remove("active");
+                    ledlampLoad.classList.remove("active", "load-active");
+                    ledlampQty.value = 0;
+                    ledlampLoad.value = 0;
+                    ledlampQty.disabled = true;
+                  }
+                }
+
+                // Fan
+                function selectFan() {
+                  fan.classList.toggle("selected");
+                  if (fan.classList.contains("selected")) {
+                    fanQty.classList.add("active");
+                    fanLoad.classList.add("active", "load-active");
+                    fanQty.value = 1;
+                    fanQty.disabled = false;
+                  } else {
+                    fanQty.classList.remove("active");
+                    fanLoad.classList.remove("active", "load-active");
+                    fanQty.value = 0;
+                    fanLoad.value = 0;
+                    fanQty.disabled = true;
+                  }
+                }
+
+                // Music system
+                function selectMsystem() {
+                  msystem.classList.toggle("selected");
+                  if (msystem.classList.contains("selected")) {
+                    msystemQty.classList.add("active");
+                    msystemLoad.classList.add("active", "load-active");
+                    msystemQty.value = 1;
+                    msystemQty.disabled = false;
+                  } else {
+                    msystemQty.classList.remove("active");
+                    msystemLoad.classList.remove("active", "load-active");
+                    msystemQty.value = 0;
+                    msystemLoad.value = 0;
+                    msystemQty.disabled = true;
+                  }
+                }
+
+                // TV one
+                function selectTvone() {
+                  tvone.classList.toggle("selected");
+                  if (tvone.classList.contains("selected")) {
+                    tvoneQty.classList.add("active");
+                    tvoneLoad.classList.add("active", "load-active");
+                    tvoneQty.value = 1;
+                    tvoneQty.disabled = false;
+                  } else {
+                    tvoneQty.classList.remove("active");
+                    tvoneLoad.classList.remove("active", "load-active");
+                    tvoneQty.value = 0;
+                    tvoneLoad.value = 0;
+                    tvoneQty.disabled = true;
+                  }
+                }
+
+                // TV two
+                function selectTvtwo() {
+                  tvtwo.classList.toggle("selected");
+                  if (tvtwo.classList.contains("selected")) {
+                    tvtwoQty.classList.add("active");
+                    tvtwoLoad.classList.add("active", "load-active");
+                    tvtwoQty.value = 1;
+                    tvtwoQty.disabled = false;
+                  } else {
+                    tvtwoQty.classList.remove("active");
+                    tvtwoLoad.classList.remove("active", "load-active");
+                    tvtwoQty.value = 0;
+                    tvtwoLoad.value = 0;
+                    tvtwoQty.disabled = true;
+                  }
+                }
+              </script>
+            </p>
+          </div>
+          <div class="w-embed w-script">
+            <p>
+              <script>
+                // Gaming Console
+                function selectGamingconsole() {
+                  gamingconsole.classList.toggle("selected");
+                  if (gamingconsole.classList.contains("selected")) {
+                    gamingconsoleQty.classList.add("active");
+                    gamingconsoleLoad.classList.add("active", "load-active");
+                    gamingconsoleQty.value = 1;
+                    gamingconsoleQty.disabled = false;
+                  } else {
+                    gamingconsoleQty.classList.remove("active");
+                    gamingconsoleLoad.classList.remove("active", "load-active");
+                    gamingconsoleQty.value = 0;
+                    gamingconsoleLoad.value = 0;
+                    gamingconsoleQty.disabled = true;
+                  }
+                }
+
+                // Microwave Oven
+                function selectMicrowaveoven() {
+                  microwaveoven.classList.toggle("selected");
+                  if (microwaveoven.classList.contains("selected")) {
+                    microwaveovenQty.classList.add("active");
+                    microwaveovenLoad.classList.add("active", "load-active");
+                    microwaveovenQty.value = 1;
+                    microwaveovenQty.disabled = false;
+                  } else {
+                    microwaveovenQty.classList.remove("active");
+                    microwaveovenLoad.classList.remove("active", "load-active");
+                    microwaveovenQty.value = 0;
+                    microwaveovenLoad.value = 0;
+                    microwaveovenQty.disabled = true;
+                  }
+                }
+
+                // Load calculators
+                // Gaming Console
+                function totalGamingconsoleLoad() {
+                  gamingconsoleLoad.value = gamingconsoleQty.value * 200;
+                }
+
+                // Microwave Oven
+                function totalMicrowaveovenLoad() {
+                  microwaveovenLoad.value = microwaveovenQty.value * 1400;
+                }
+              </script>
+            </p>
+          </div>
+          <div class="w-embed w-script">
+            <p>
+              <script>
+                // Refrigerator one
+                function selectFridgeone() {
+                  fridgeone.classList.toggle("selected");
+                  if (fridgeone.classList.contains("selected")) {
+                    fridgeoneQty.classList.add("active");
+                    fridgeoneLoad.classList.add("active", "load-active");
+                    fridgeoneQty.value = 1;
+                    fridgeoneQty.disabled = false;
+                  } else {
+                    fridgeoneQty.classList.remove("active");
+                    fridgeoneLoad.classList.remove("active", "load-active");
+                    fridgeoneQty.value = 0;
+                    fridgeoneLoad.value = 0;
+                    fridgeoneQty.disabled = true;
+                  }
+                }
+
+                // Refrigerator two
+                function selectFridgetwo() {
+                  fridgetwo.classList.toggle("selected");
+                  if (fridgetwo.classList.contains("selected")) {
+                    fridgetwoQty.classList.add("active");
+                    fridgetwoLoad.classList.add("active", "load-active");
+                    fridgetwoQty.value = 1;
+                    fridgetwoQty.disabled = false;
+                  } else {
+                    fridgetwoQty.classList.remove("active");
+                    fridgetwoLoad.classList.remove("active", "load-active");
+                    fridgetwoQty.value = 0;
+                    fridgetwoLoad.value = 0;
+                    fridgetwoQty.disabled = true;
+                  }
+                }
+
+                // Refrigerator three
+                function selectFridgethree() {
+                  fridgethree.classList.toggle("selected");
+                  if (fridgethree.classList.contains("selected")) {
+                    fridgethreeQty.classList.add("active");
+                    fridgethreeLoad.classList.add("active", "load-active");
+                    fridgethreeQty.value = 1;
+                    fridgethreeQty.disabled = false;
+                  } else {
+                    fridgethreeQty.classList.remove("active");
+                    fridgethreeLoad.classList.remove("active", "load-active");
+                    fridgethreeQty.value = 0;
+                    fridgethreeLoad.value = 0;
+                    fridgethreeQty.disabled = true;
+                  }
+                }
+
+                // Refrigerator four
+                function selectFridgefour() {
+                  fridgefour.classList.toggle("selected");
+                  if (fridgefour.classList.contains("selected")) {
+                    fridgefourQty.classList.add("active");
+                    fridgefourLoad.classList.add("active", "load-active");
+                    fridgefourQty.value = 1;
+                    fridgefourQty.disabled = false;
+                  } else {
+                    fridgefourQty.classList.remove("active");
+                    fridgefourLoad.classList.remove("active", "load-active");
+                    fridgefourQty.value = 0;
+                    fridgefourLoad.value = 0;
+                    fridgefourQty.disabled = true;
+                  }
+                }
+
+                // AC one
+                function selectAcone() {
+                  acone.classList.toggle("selected");
+                  if (acone.classList.contains("selected")) {
+                    aconeQty.classList.add("active");
+                    aconeLoad.classList.add("active", "load-active");
+                    aconeQty.value = 1;
+                    aconeQty.disabled = false;
+                  } else {
+                    aconeQty.classList.remove("active");
+                    aconeLoad.classList.remove("active", "load-active");
+                    aconeQty.value = 0;
+                    aconeLoad.value = 0;
+                    aconeQty.disabled = true;
+                  }
+                }
+
+                // AC two
+                function selectActwo() {
+                  actwo.classList.toggle("selected");
+                  if (actwo.classList.contains("selected")) {
+                    actwoQty.classList.add("active");
+                    actwoLoad.classList.add("active", "load-active");
+                    actwoQty.value = 1;
+                    actwoQty.disabled = false;
+                  } else {
+                    actwoQty.classList.remove("active");
+                    actwoLoad.classList.remove("active", "load-active");
+                    actwoQty.value = 0;
+                    actwoLoad.value = 0;
+                    actwoQty.disabled = true;
+                  }
+                }
+
+                // AC three
+                function selectActhree() {
+                  acthree.classList.toggle("selected");
+                  if (acthree.classList.contains("selected")) {
+                    acthreeQty.classList.add("active");
+                    acthreeLoad.classList.add("active", "load-active");
+                    acthreeQty.value = 1;
+                    acthreeQty.disabled = false;
+                  } else {
+                    acthreeQty.classList.remove("active");
+                    acthreeLoad.classList.remove("active", "load-active");
+                    acthreeQty.value = 0;
+                    acthreeLoad.value = 0;
+                    acthreeQty.disabled = true;
+                  }
+                }
+
+                // Desktop Computer
+                function selectDesktop() {
+                  desktop.classList.toggle("selected");
+                  if (desktop.classList.contains("selected")) {
+                    desktopQty.classList.add("active");
+                    desktopLoad.classList.add("active", "load-active");
+                    desktopQty.value = 1;
+                    desktopQty.disabled = false;
+                  } else {
+                    desktopQty.classList.remove("active");
+                    desktopLoad.classList.remove("active", "load-active");
+                    desktopQty.value = 0;
+                    desktopLoad.value = 0;
+                    desktopQty.disabled = true;
+                  }
+                }
+
+                // Laptop
+                function selectLaptop() {
+                  laptop.classList.toggle("selected");
+                  if (laptop.classList.contains("selected")) {
+                    laptopQty.classList.add("active");
+                    laptopLoad.classList.add("active", "load-active");
+                    laptopQty.value = 1;
+                    laptopQty.disabled = false;
+                  } else {
+                    laptopQty.classList.remove("active");
+                    laptopLoad.classList.remove("active", "load-active");
+                    laptopQty.value = 0;
+                    laptopLoad.value = 0;
+                    laptopQty.disabled = true;
+                  }
+                }
+
+                // Toaster
+                function selectToaster() {
+                  toaster.classList.toggle("selected");
+                  if (toaster.classList.contains("selected")) {
+                    toasterQty.classList.add("active");
+                    toasterLoad.classList.add("active", "load-active");
+                    toasterQty.value = 1;
+                    toasterQty.disabled = false;
+                  } else {
+                    toasterQty.classList.remove("active");
+                    toasterLoad.classList.remove("active", "load-active");
+                    toasterQty.value = 0;
+                    toasterLoad.value = 0;
+                    toasterQty.disabled = true;
+                  }
+                }
+
+                // Washing Machine
+                function selectWashingmachine() {
+                  washingmachine.classList.toggle("selected");
+                  if (washingmachine.classList.contains("selected")) {
+                    washingmachineQty.classList.add("active");
+                    washingmachineLoad.classList.add("active", "load-active");
+                    washingmachineQty.value = 1;
+                    washingmachineQty.disabled = false;
+                  } else {
+                    washingmachineQty.classList.remove("active");
+                    washingmachineLoad.classList.remove(
+                      "active",
+                      "load-active"
+                    );
+                    washingmachineQty.value = 0;
+                    washingmachineLoad.value = 0;
+                    washingmachineQty.disabled = true;
+                  }
+                }
+
+                // Load calculators
+                // Bulb
+                function totalBulbLoad() {
+                  bulbLoad.value = bulbQty.value * 60;
+                }
+                // Tube light
+                function totalTlightLoad() {
+                  tlightLoad.value = tlightQty.value * 18;
+                }
+
+                // LED Lamp
+                function totalLedlampLoad() {
+                  ledlampLoad.value = ledlampQty.value * 15;
+                }
+
+                // Fan
+                function totalFanLoad() {
+                  fanLoad.value = fanQty.value * 70;
+                }
+
+                // Music system
+                function totalMsystemLoad() {
+                  msystemLoad.value = msystemQty.value * 320;
+                }
+
+                // TV one
+                function totalTvoneLoad() {
+                  tvoneLoad.value = tvoneQty.value * 150;
+                }
+
+                // TV two
+                function totalTvtwoLoad() {
+                  tvtwoLoad.value = tvtwoQty.value * 200;
+                }
+
+                // Refrigerator one
+                function totalFridgeoneLoad() {
+                  fridgeoneLoad.value = fridgeoneQty.value * 150;
+                }
+
+                // Refrigerator two
+                function totalFridgetwoLoad() {
+                  fridgetwoLoad.value = fridgetwoQty.value * 210;
+                }
+
+                // Refrigerator three
+                function totalFridgethreeLoad() {
+                  fridgethreeLoad.value = fridgethreeQty.value * 320;
+                }
+
+                // Refrigerator four
+                function totalFridgefourLoad() {
+                  fridgefourLoad.value = fridgefourQty.value * 460;
+                }
+
+                // AC one
+                function totalAconeLoad() {
+                  aconeLoad.value = aconeQty.value * 1120;
+                }
+
+                // AC two
+                function totalActwoLoad() {
+                  actwoLoad.value = actwoQty.value * 1830;
+                }
+
+                // AC three
+                function totalActhreeLoad() {
+                  acthreeLoad.value = acthreeQty.value * 2500;
+                }
+
+                // Desktop Computer
+                function totalDesktopLoad() {
+                  desktopLoad.value = desktopQty.value * 200;
+                }
+
+                // Laptop
+                function totalLaptopLoad() {
+                  laptopLoad.value = laptopQty.value * 100;
+                }
+
+                // Toaster
+                function totalToasterLoad() {
+                  toasterLoad.value = toasterQty.value * 800;
+                }
+
+                // Washing Machine
+                function totalWashingmachineLoad() {
+                  washingmachineLoad.value = washingmachineQty.value * 1000;
+                }
+
+                // Total load calculator
+                function calcTotalLoad() {
+                  var total = 0;
+                  var i = 0;
+                  for (i = 0; i < loadActive.length; i++) {
+                    total += parseInt(loadActive[i].value);
+                  }
+                  totalLoad.value = total;
+                  getRating();
+                  calcBackupTime();
+                }
+
+                // Recommended rating
+                var bbv = 0;
+                function getRating() {
+                  if (totalLoad.value <= 400) {
+                    rating.value = 800;
+                    bbv = 12;
+                    getInvertors.href =
+                      "https://www.thesimbaden.com/product-tag/ir01";
+                  } else if (totalLoad.value > 400 && totalLoad.value < 751) {
+                    rating.value = 1500;
+                    bbv = 24;
+                    getInvertors.href =
+                      "https://www.thesimbaden.com/product-tag/ir02";
+                  } else if (totalLoad.value > 750 && totalLoad.value < 1226) {
+                    rating.value = 2500;
+                    bbv = 36;
+                    getInvertors.href =
+                      "https://www.thesimbaden.com/product-tag/ir03";
+                  } else if (totalLoad.value > 1225 && totalLoad.value < 1751) {
+                    rating.value = 3500;
+                    bbv = 48;
+                    getInvertors.href =
+                      "https://www.thesimbaden.com/product-tag/ir04";
+                  } else if (totalLoad.value > 1750 && totalLoad.value < 2501) {
+                    rating.value = 5000;
+                    bbv = 96;
+                    getInvertors.href =
+                      "https://www.thesimbaden.com/product-tag/ir05";
+                  } else if (totalLoad.value > 2500 && totalLoad.value < 3751) {
+                    rating.value = 7500;
+                    bbv = 120;
+                    getInvertors.href =
+                      "https://www.thesimbaden.com/product-tag/ir06";
+                  } else if (totalLoad.value > 3750 && totalLoad.value < 5001) {
+                    rating.value = 10000;
+                    bbv = 180;
+                    getInvertors.href =
+                      "https://www.thesimbaden.com/product-tag/ir07";
+                  } else if (totalLoad.value > 5000 && totalLoad.value < 7501) {
+                    rating.value = 15000;
+                    bbv = 240;
+                    getInvertors.href =
+                      "https://www.thesimbaden.com/product-tag/ir08";
+                  } else if (
+                    totalLoad.value > 7500 &&
+                    totalLoad.value < 10001
+                  ) {
+                    rating.value = 20000;
+                    bbv = 384;
+                    getInvertors.href =
+                      "https://www.thesimbaden.com/product-tag/ir09";
+                  } else if (
+                    totalLoad.value > 10000 &&
+                    totalLoad.value < 15001
+                  ) {
+                    rating.value = 30000;
+                    bbv = 384;
+                    getInvertors.href =
+                      "https://www.thesimbaden.com/product-tag/ir10";
+                  } else if (
+                    totalLoad.value > 15000 &&
+                    totalLoad.value < 20001
+                  ) {
+                    rating.value = 40000;
+                    bbv = 384;
+                    getInvertors.href =
+                      "https://www.thesimbaden.com/product-tag/ir11";
+                  } else if (
+                    totalLoad.value > 20000 &&
+                    totalLoad.value < 25001
+                  ) {
+                    rating.value = 50000;
+                    bbv = 384;
+                    getInvertors.href =
+                      "https://www.thesimbaden.com/product-tag/ir12";
+                  } else if (
+                    totalLoad.value > 25000 &&
+                    totalLoad.value < 30001
+                  ) {
+                    rating.value = 60000;
+                    bbv = 384;
+                    getInvertors.href =
+                      "https://www.thesimbaden.com/product-tag/ir13";
+                  } else if (
+                    totalLoad.value > 30000 &&
+                    totalLoad.value < 40001
+                  ) {
+                    rating.value = 80000;
+                    bbv = 384;
+                    getInvertors.href =
+                      "https://www.thesimbaden.com/product-tag/ir14";
+                  } else if (
+                    totalLoad.value > 40000 &&
+                    totalLoad.value < 60001
+                  ) {
+                    rating.value = 120000;
+                    bbv = 384;
+                    getInvertors.href =
+                      "https://www.thesimbaden.com/product-tag/ir15";
+                  } else {
+                    console.log("none");
+                  }
+                }
+
+                // Battery backup time calculator
+                function calcBackupTime() {
+                  var bbt = 0;
+                  const x = 0.8;
+                  bbt = (x * batteryCapacity.value * bbv) / totalLoad.value;
+                  backupTime.value = Math.round(bbt * 100) / 100;
+
+                  if (isNaN(bbt) || !isFinite(bbt)) {
+                    backupTime.value = 0;
+                    note.innerText = `please select at least one appliance
+to calculate your load.`;
+                  } else {
+                    note.innerText = ``;
+                  }
+                }
+              </script>
+            </p>
+          </div>
+        </div>
+
+
+<!-- Footer -->
+<section id="contact" class="gradient-background mb-0 pb-0">
+  <div class="container ">
+    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 mt-5 border-top  ">
+      <div class="col mb-3 middle">
+
+        <img src="./goal images/logomain2.png" alt="">
+        <h4>Head Office:</h4>
+        <h5>Solar Renewables Ltd.</h5>
+        <p>46 Layout, Abuja. Nigeria</p>
+
+      </div>
+
+      <div class="col mb-3 middle">
+
+      </div>
+
+      <div class="col mb-3 middle">
+        <h5>SERVICES</h5>
+        <ul class="nav flex-column ">
+          <li class="nav-item mb-2 "><a href="/mini-grid.html" class="nav-link p-0 text-dark">Mini-Grid</a></li>
+          <li class="nav-item mb-2 "><a href="/balcony-solar.html" class="nav-link p-0 text-dark">Balcony Solar</a></li>
+          <li class="nav-item mb-2 "><a href="/battery-storage.html" class="nav-link p-0 text-dark">Battery Storage</a></li>
+          <li class="nav-item mb-2 "><a href="/ev-charging.html" class="nav-link p-0 text-dark">EV Charging</a></li>
+          <li class="nav-item mb-2 "><a href="/agricultural-solar.html" class="nav-link p-0 text-dark">Agricultural Solar</a></li>
+        </ul>
+      </div>
+
+      <div class="col mb-3 middle">
+        <h5>SITEMAP</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-dark">Home</a></li>
+          <li class="nav-item mb-2"><a href="/about.html" class="nav-link p-0 text-dark">About</a></li>
+          <li class="nav-item mb-2"><a href="/blogs.html" class="nav-link p-0 text-dark">Blogs</a></li>
+          <li class="nav-item mb-2"><a href="/support.html" class="nav-link p-0 text-dark">Support</a></li>
+          <li class="nav-item mb-2"><a href="/contact.html" class="nav-link p-0 text-dark">Contact Us</a></li>
+          <li class="nav-item mb-2"><a href="./privacy.html" class="nav-link p-0 text-dark">Privacy Policy</a></li>
+
+
+        </ul>
+        
+      </div>
+
+      <div class="col mb-3 middle">
+        <h5>GET IN TOUCH</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="tel:+234 806 037 6481" class="nav-link p-0 text-dark"><i class="bi bi-phone currentColor"></i>+234 806 037 6481</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark"><i class="bi bi-whatsapp"></i> Whatsapp</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark"><i class="bi bi-facebook"></i> Facebook</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark"><i class="bi bi-google"></i> Email</a></li>
+        </ul>
+      </div>
+
+    </footer>
+    <p class=" mb-0 row mx-auto  pb-4 w-50">Solar Renewables Limited is Registered in Nigeria under the Corporate Affairs Commission CAC with RC</p>
+
+  </div>
+
+</section>
+ 
+
+
+      </div>
+     
+    
+  </body>
+</html>

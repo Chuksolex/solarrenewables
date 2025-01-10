@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Payment Gateway - Solar 4 Good</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+
+
+    <style>
+      :root {
+        --primary-orange: #faa40f;
+      }
+      html {
+        width: 100%;
+        height: 100vh;
+        min-height: 550px;
+        padding: 0px;
+        margin: 0px;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+      }
+      .main {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        background-color: var(--primary-orange);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: rgba(245, 245, 245, 1);
+      }
+      .payment-detail {
+        width: 80%;
+        min-width: 305px;
+        max-width: 400px;
+        height: 280px;
+        margin: 0px auto;
+        align-self: center;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+       
+      }
+      .payment-image {
+        width: 35%;
+        height: 280px;
+        margin: 0px;
+        background-color: coral;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+      .details-container {
+        width: 65%;
+        height: auto;
+        margin: 0px auto;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        box-sizing: border-box;
+        align-self: flex-end;
+      }
+      .logo {
+        width: 40px;
+        height: 60px;
+        margin: 6px auto;
+        margin-bottom: 12px;
+        align-self: center;
+       
+      }
+      .details-heading {
+        font-size: 16px;
+        font-weight: 500;
+        font-family: "Inter", sans-serif;
+        text-align: left;
+        padding: 0px;
+        padding-left: 8px;
+        margin: 0px;
+        line-height: 1.3;
+      }
+      .input-container {
+        width: 100%;
+        height: auto;
+        margin: 8px 0px;
+        margin-left: 8px;
+        padding: 0px;
+      }
+      .input-label {
+        font-size: 22px;
+        font-weight: 700;
+        font-family: "Inter", sans-serif;
+        text-align: left;
+        color: black;
+        margin: 0px;
+        padding: 0px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .payment-email {
+        width: 50%;
+        height: 30px;
+        margin-left: 20px;
+        padding: 3px 4px;
+        border: 1px solid rgba(220, 220, 220, 1);
+        border-radius: 7px;
+        font-size: 14px;
+        font-family: "Inter", sans-serif;
+        text-align: center;
+        color: rgba(120, 120, 120, 1);
+      }
+      .payment-input {
+        width: 50%;
+        height: 30px;
+        margin: 0px;
+        padding: 3px 4px;
+        border: 1px solid rgba(220, 220, 220, 1);
+        border-radius: 7px;
+        font-size: 14px;
+        font-family: "Inter", sans-serif;
+        text-align: center;
+        color: rgba(120, 120, 120, 1);
+      }
+      .amount {
+        font-size: 18px;
+        font-weight: 500;
+        font-family: "Inter", sans-serif;
+        text-align: left;
+        margin: 0px;
+        padding: 0px;
+      }
+      .payment-button {
+        width: 100%;
+        height: auto;
+        margin: 0px;
+        padding: 12px 0px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+        color: black;
+        background-color: #C2FFC7;
+        border: 1px solid #C2FFC7;
+        cursor: pointer;
+      }
+      .payment-button:focus {
+        outline: none;
+      }
+      .text {
+        width: 50%;
+        min-width: 270px;
+        font-size: 18px;
+        font-weight: 700;
+        font-family: "Inter", sans-serif;
+        text-align: center;
+        margin: 0px auto;
+        padding: 0px;
+        line-height: 1.3;
+        align-self: center;
+      }
+      .text > a {
+        color: var(--primary-orange);
+      }
+
+      .splash-screen {
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.2);
+        display: none;
+        flex-direction: row;
+        justify-content: space-around;
+        z-index: 60;
+      }
+      @keyframes load {
+        from {
+          transform: rotateZ(0deg);
+        }
+        to {
+          transform: rotateZ(360deg);
+        }
+      }
+      .loading-div {
+        width: 30px;
+        height: 30px;
+        align-self: center;
+        border-radius: 100%;
+        border: 2px solid white;
+        border-left: 2px solid transparent;
+        animation-name: load;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+  <body>
+    <div id="splash-screen" class="splash-screen">
+      <div class="loading-div"></div>
+    </div>
+    <section class="main">
+      <div class="payment-detail">
+        <div
+          class="payment-image"
+          style="background-image: url('./images/solarnigeria.jpeg')"
+        ></div>
+        <div class="details-container">
+          <img class="logo" src="./goal images/logomain2.png" alt="Solar Renewables" />
+          <h3 class="details-heading">Please Enter Your Email</h3>
+          <div class="input-container">
+
+            <input type="email" id="email" class="payment-email" placeholder="Your Email Address" required />
+
+          </div>
+
+          <h3 class="details-heading">Please Enter Amount</h3>
+          <div class="input-container">
+
+            <p class="input-label">₦</p>
+            <input
+              class="payment-input"
+              id="amount"
+              type="number"
+              value=""
+              min="1000"
+            />
+          </div>
+          <button class="payment-button" type="button" id="checkout-button" onclick="payWithPaystack()">
+            Checkout
+          </button>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script type="text/javascript">
+     function payWithPaystack() {
+       let email = document.getElementById('email').value;
+        let amount = document.getElementById("amount").value;
+        if (!amount || amount <= 1000) {
+          alert("Please enter a valid amount from N1000.");
+          return;
+        }
+
+        let handler = PaystackPop.setup({
+          key: "pk_test_899a4106fe70d3c4ae2f5db28615c1b3ad60dd8e", // Replace with your Paystack public key
+          email: email,
+          amount: amount , // Amount in kobo (multiply by 100)
+          currency: "NGN",
+          callback: function (response) {
+            // Redirect or handle success here
+            alert("Payment successful. Transaction ref is " + response.reference);
+          },
+          onClose: function () {
+            alert("Transaction was not completed. Try agin.");
+          },
+        });
+
+        handler.openIframe();
+      }
+  </script>
+</html>
