@@ -789,11 +789,11 @@
       <h3>Do you need Solar for your home or business?</h3>
       <div class="enquiry-form-step-radio-input-container">
         <div data-selected="false" class="enquiry-form-radio-input">
-          <input type="radio" name="solartype" value="home" class="enquiry-form-radio-input-toggle">
+          <input type="radio" name="solartype" value="home" class="enquiry-form-radio-input-toggle" onchange="redirectToContact(this.value)">
           <label for="home" class="enquiry-form-radio-input-text">Home</label>
         </div>
         <div data-selected="false" class="enquiry-form-radio-input">
-          <input type="radio" name="solartype" value="business" class="enquiry-form-radio-input-toggle">
+          <input type="radio" name="solartype" value="business" class="enquiry-form-radio-input-toggle" onchange="redirectToContact(this.value)">
           <label for="business" class="enquiry-form-radio-input-text">Business</label>
         </div>
       </div>
@@ -885,6 +885,14 @@
     </div>
 
   </section>
+  <script>
+    function redirectToContact(selectedValue) {
+      const url = `./contact.html?solarFor=${selectedValue}`;
+      window.location.href= url;
+
+      
+    }
+    </script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@
   
   
  .supportForm{
-    width: 60%;
+    width: 65%;
     margin-inline: auto;
     position: relative;
     top: -40px;
@@ -53,7 +53,7 @@ button{
     }
   }
   .gradient-background {
-    background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+    background: linear-gradient(300deg, #9EDF9C, #C2FFC7, #62825D);
     background-size: 180% 180%;
     animation: gradient-animation 18s ease infinite;
     height: 100vph;
