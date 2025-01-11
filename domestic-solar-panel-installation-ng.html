@@ -37,17 +37,22 @@
 <body>
    
  <section id="nabararea">
+  <section id="nabararea">
     <!--Navbar-->
-   <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+   <nav class="navbar navbar-expand-lg bg-success border-bottom border-body" data-bs-theme="dark">
     <div class="container-fluid">
     <!-- Navbar content -->
-    <a class="navbar-brand" href="/"><img src="./goal images/logomain2.png" width="70" alt="logo">
-      </a>
+    <a class="navbar-brand" href="/"><img src="./goal images/logomain2.png" width="50" alt="logo" height="70"> </a>
+     <div >
+         <span class="text-white">Solar Renewables Ltd.</span><br>
+         <span class="text-white fw-bold fst-italic m-0">We are ready for the future</span>
+
+     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0 text-center">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/about.html">About</a>
         </li>
@@ -57,8 +62,38 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/commercial-solar-panel-installation-ng.html">Commercial</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/blogs.html">Blogs</a>
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/mini-grid.html">Mini-Grid</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/balcony-solar.html">Balcony Solar</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/battery-storage.html">Battery Storage</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/ev-charging.html">EV Charging</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/agricultural-solar.html">Agricultural Solar</a></li>
+            <li><hr class="dropdown-divider"></li>
+           
+
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="/load-calculator.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Load Calculator
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/load-calculator.html">Load Calculator</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/inverter-calculator.html">Inverter Load Calculator</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/solar-panel-calculator.html">Solar Panel Load Calculator</a></li>
+           
+
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/contact.html">Contact</a>
@@ -67,41 +102,25 @@
           <a class="nav-link active" aria-current="page" href="/support.html">Support</a>
         </li>
         
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Products
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/inverter-batteries">Inverter Batteries</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/solar-panels">Solar Panels</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/solar-inverters">Solar Inverters</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/all-in-one-solar-system">All In One Solar System</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/solar-street-light">Solar-Street-Light</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/solar-accessories">Solar Accessories</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/other-products">Other Products</a></li>
-            <li><hr class="dropdown-divider"></li>
-
-          </ul>
-        </li> -->
+        
        
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">Search</button>
-      </form>
+      <div class="d-flex justify-content-center align-items-center gap-5">
+        <p class="text-light fw-bold m-0">
+          <i class="bi-phone"></i> 08077363636363
+        </p>
+        <!-- Button -->
+        <a class="btn btn-outline-light fw-bold" href="/payment.html">Pay Now</a>
+      </div>
+      
     </div>
+
   </div>
+
    </nav>
 
  </section>
+
   <!-- Title -->
   <section id="title" class="hero-section" >
 
@@ -644,11 +663,11 @@
       <h3>Do you need Solar for your home or business?</h3>
       <div class="enquiry-form-step-radio-input-container">
         <div data-selected="false" class="enquiry-form-radio-input">
-          <input type="radio" name="solartype" value="home" class="enquiry-form-radio-input-toggle">
+          <input type="radio" name="solartype" value="home" class="enquiry-form-radio-input-toggle" onchange="redirectToContact(this.value)">
           <label for="home" class="enquiry-form-radio-input-text">Home</label>
         </div>
         <div data-selected="false" class="enquiry-form-radio-input">
-          <input type="radio" name="solartype" value="business" class="enquiry-form-radio-input-toggle">
+          <input type="radio" name="solartype" value="business" class="enquiry-form-radio-input-toggle" onchange="redirectToContact(this.value)">
           <label for="business" class="enquiry-form-radio-input-text">Business</label>
         </div>
       </div>
@@ -740,6 +759,15 @@
   </div>
 
 </section>
+
+<script>
+  function redirectToContact(selectedValue) {
+    const url = `./contact.html?solarFor=${selectedValue}`;
+    window.location.href= url;
+
+    
+  }
+  </script>
 </body>
 
 </html>
