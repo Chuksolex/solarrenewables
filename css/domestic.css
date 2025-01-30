@@ -112,22 +112,22 @@
      color: rgb(92, 90, 90);
   }
   .backgroundo1{
-    background-color: #f8bac3;
+    background-color: #9EDF9C;
   
     ;
   }
   .textColor{
-    color:#ff4c68;
+    color:#9EDF9C;
     font-weight: bolder;
   }
   .iconStyle{
-    color: #ff4c68;
+    color: #9EDF9C;
     font-weight: 700;
     font-size: large;
     size: 32;
   }
   .styledHr{
-    color: #ff4c68;
+    color: #9EDF9C;
   
     border-width: 10px;
   }
@@ -149,7 +149,7 @@
   }
   
   .tertiary{
-    background-color: #ff4c68;
+    background-color: #9EDF9C;
   }
   .animateText{
     animation: blink 1.5s infinite; /* 1-second cycle, loops infinitely */
@@ -308,7 +308,7 @@
     align-items: center;
     justify-content: space-between;
     border-radius: 50px;
-    background-color: #f8bac3;
+    background-color: #9EDF9C;
     padding: 10px; 
     height: 100px; /* Adjust for the rounded height */
     overflow: hidden;
@@ -393,7 +393,7 @@
   
   .roundedColor{
     border-radius: 100%;
-    background-color: #ff4c68;
+    background-color: #9EDF9C;
   }
   
   

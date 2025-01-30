@@ -112,27 +112,28 @@ button{
   }
   
   
+  
   .backgroundo{
-    background-color: #ff4c68;
+    background-color: #9EDF9C;
      color: white;
   }
   .backgroundo1{
-    background-color: #f8bac3;
+    background-color: #9EDF9C;
   
     ;
   }
   .textColor{
-    color:#ff4c68;
+    color: #9EDF9C;
     font-weight: bolder;
   }
   .iconStyle{
-    color: #ff4c68;
+    color: #9EDF9C;
     font-weight: 700;
     font-size: large;
     size: 32;
   }
   .styledHr{
-    color: #ff4c68;
+    color: #9EDF9C;
   
     border-width: 10px;
   }
