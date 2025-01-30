@@ -244,7 +244,7 @@ background: linear-gradient(300deg, #9EDF9C, #C2FFC7, #62825D);
   align-items: center;
   justify-content: space-between;
   border-radius: 50px;
-  background-color: #f8bac3;
+  background-color: #9EDF9C;
   padding: 10px; 
   height: 100px; /* Adjust for the rounded height */
   overflow: hidden;
@@ -329,6 +329,6 @@ background: linear-gradient(300deg, #9EDF9C, #C2FFC7, #62825D);
 
 .roundedColor{
   border-radius: 100%;
-  background-color: #ff4c68;
+  background-color: #9EDF9C;
 }
 
